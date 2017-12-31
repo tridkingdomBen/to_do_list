@@ -1,0 +1,5 @@
+<p>list name: <%= @list.name %> </p>
+<p>Duedate: <%= @list.duedate %> </p>
+<p>Notes! <%= simple_format(@list.note) %> </p>
+
+<%= link_to '回首頁', lists_path %>
