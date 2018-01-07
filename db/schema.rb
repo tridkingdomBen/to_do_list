@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229131734) do
+ActiveRecord::Schema.define(version: 20180101150149) do
 
   create_table "datepickers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171229131734) do
     t.date "duedate"
     t.string "note"
     t.boolean "is_public"
+    t.datetime "completed_at"
   end
 
 end

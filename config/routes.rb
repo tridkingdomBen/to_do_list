@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :lists do
     member do
       post :is_public
+      patch :complete
     end
   end
 end

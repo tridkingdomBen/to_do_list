@@ -7,14 +7,19 @@
   <th>展示
   <th>編輯
   <th>刪除
+  <th>實際完成日期
   <% @lists.each do |list| %>
     <tr>
-      <td><%= check_box_tag :is_public, true , list.is_public, data: { url: is_public_list_path(list), method: :post, remote: true } %></td>
+      <td><%= check_box_tag :is_public ,true , list.is_public, data: { url: is_public_list_path(list), method: :post, remote: true } %></td>
       <td><%= list.name %></td>
       <td><%= list.duedate %></td>
       <td><%= link_to 'Show', list_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      <td><%= link_to 'Destroy', list_path(list), method: :delete, data:{ confirm: "Are you sure?" } %></td>
+      <td><%= link_to list_path(list), method: :delete, data:{ confirm: "Are you sure?" } do%>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+      </td>
+      <td><%= list.completed_at %></td>
     </tr>
   <% end %>
   </th>

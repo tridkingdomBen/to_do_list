@@ -4,6 +4,13 @@ class ListsController < ApplicationController
     @lists = List.order(duedate: :asc)
   end
 
+  def complete
+    if @List.is_public != true
+      @list.update_attributes(:completed_at, Time.now)
+      redirect_to lists_url, notice: "任務已完成！"
+    end
+  end
+
   def new
     @list=List.new
   end
