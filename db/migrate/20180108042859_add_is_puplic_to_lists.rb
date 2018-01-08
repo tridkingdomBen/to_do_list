@@ -1,4 +1,4 @@
-class AddIspuplicToLists < ActiveRecord::Migration[5.1]
+class AddIsPuplicToLists < ActiveRecord::Migration[5.1]
   def change
     add_column :lists, :is_public, :boolean
   end
